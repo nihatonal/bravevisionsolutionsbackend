@@ -241,14 +241,14 @@ const send_mail = async (req, res, next) => {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: 'onalnihat1986@gmail.com',
-      pass: 'gsfn oxub flrb alhb'
+      user: process.env.USER_EMAIL,
+      pass: process.env.USER_EMAIL_PASSWORD,
     },
     secure: true,
   });
 
   const mailData = {
-    from: 'onalnihat1986@gmail.com',
+    from: process.env.USER_EMAIL,
     to: "onalnihat@outlook.com",
     subject: `${name} isimli kisiden basvuru`,
     text: ``,
